@@ -4,10 +4,10 @@
   "description": "Versa static website",
   "scripts": {
     "build": "echo 'Static site - no build needed'",
-    "start": "npx serve -s . -l 8080"
+    "start": "node server.js"
   },
   "dependencies": {
-    "serve": "^14.2.1"
+    "express": "^4.18.2"
   },
   "devDependencies": {}
 }

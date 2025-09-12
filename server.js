@@ -1,32 +1,17 @@
 const express = require("express");
-const cors = require("cors");
 const path = require("path");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 
-// Middleware
-app.use(cors());
+// Serve static files from the current directory
 app.use(express.static("."));
 
-// Serve the main HTML file
-app.get("/", (req, res) => {
+// Serve index.html for all routes (for single page app routing)
+app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// Health check endpoint
-app.get("/health", (req, res) => {
-  res.json({ status: "OK", timestamp: new Date().toISOString() });
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
 });
-
-// Start server
-app.listen(PORT, () => {
-  console.log(`🚀 Versa Website running at http://localhost:${PORT}`);
-  console.log(`📱 Preview your waitlist site!`);
-});
-
-module.exports = app;
-
-
-
-
