@@ -1,5 +1,10 @@
 // API Configuration
-const API_BASE_URL = "http://172.20.10.8:8000/api";
+// Use production API URL when deployed, local for development
+const API_BASE_URL =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1"
+    ? "http://172.20.10.8:8000/api" // Local development
+    : "https://api.versa-shop.com/api"; // Production API
 
 // Modal Management
 function showWaitlistModal() {
