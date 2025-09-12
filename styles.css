@@ -1179,10 +1179,12 @@ body {
 
   .subsection-title {
     font-size: 28px;
+    text-align: center;
   }
 
   .subsection-text {
     font-size: 16px;
+    text-align: center;
   }
 
   .subsection-image {
@@ -1321,11 +1323,13 @@ body {
   .subsection-title {
     font-size: 24px;
     margin-bottom: 16px;
+    text-align: center;
   }
 
   .subsection-text {
     font-size: 16px;
     line-height: 1.6;
+    text-align: center;
   }
 
   .subsection-image {
