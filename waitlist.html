@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join the Waitlist - Versa</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+      <div class="header-container">
+        <!-- Logo -->
+        <div class="logo-container">
+          <button
+            class="header-back-btn"
+            onclick="goBackToMain()"
+            style="display: block"
+            id="headerBackBtn"
+          >
+            ← Back to Home
+          </button>
+          <img
+            src="assets/VersaLogo.png"
+            alt="Versa Logo"
+            class="logo"
+            onclick="goBackToMain()"
+          />
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+          <button class="nav-btn how-it-works-btn" onclick="goToHowItWorks()">
+            How does it work
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Banner Section -->
+      <section class="waitlist-banner-section">
+        <div class="waitlist-banner">
+          <img
+            src="assets/WebsitePhoto1.jpeg"
+            alt="Join Versa Waitlist"
+            class="waitlist-banner-image"
+          />
+        </div>
+      </section>
+
+      <!-- Waitlist Form Section -->
+      <section class="waitlist-form-section">
+        <div class="container">
+          <div class="waitlist-form-container">
+            <h1 class="waitlist-title">Join the Versa Waitlist</h1>
+            <p class="waitlist-subtitle">
+              Be the first to know when Versa launches at your university!
+            </p>
+
+            <form id="waitlistPageForm" class="waitlist-page-form">
+              <div class="form-group">
+                <label for="firstNamePage">First Name</label>
+                <input
+                  type="text"
+                  id="firstNamePage"
+                  name="firstName"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="lastNamePage">Last Name</label>
+                <input type="text" id="lastNamePage" name="lastName" required />
+              </div>
+              <div class="form-group">
+                <label for="emailPage">Email Address (.edu required)</label>
+                <input type="email" id="emailPage" name="email" required />
+                <small class="email-hint"
+                  >Please use your university email address ending in
+                  .edu</small
+                >
+              </div>
+              <div class="form-group">
+                <label for="collegePage">University/College</label>
+                <input
+                  type="text"
+                  id="collegePage"
+                  name="college"
+                  placeholder="Start typing your university name..."
+                  autocomplete="off"
+                  required
+                />
+                <div id="collegeDropdown" class="college-dropdown"></div>
+              </div>
+              <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                  <input
+                    type="checkbox"
+                    id="emailConsentPage"
+                    name="emailConsent"
+                  />
+                  <span class="checkmark"></span>
+                  Check this box if you consent to receiving email updates about
+                  Versa
+                </label>
+              </div>
+              <button type="submit" class="submit-btn">Join Waitlist</button>
+            </form>
+
+            <div
+              id="successMessagePage"
+              class="success-message"
+              style="display: none"
+            >
+              <h3>🎉 Welcome to the waitlist!</h3>
+              <p>We'll notify you as soon as Versa is ready to launch!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img
+            src="assets/VersaLogo.png"
+            alt="Versa Logo"
+            class="footer-logo-img"
+          />
+        </div>
+        <div class="footer-text">
+          <p>&copy; Versa 2025 All rights reserved</p>
+          <div class="footer-links">
+            <a href="#" onclick="openModal('termsModal')" class="footer-link"
+              >Terms of Service</a
+            >
+            <span class="footer-separator">|</span>
+            <a href="#" onclick="openModal('privacyModal')" class="footer-link"
+              >Privacy Policy</a
+            >
+          </div>
+        </div>
+        <div class="footer-social">
+          <a
+            href="https://www.instagram.com/natanelsolomonov/"
+            target="_blank"
+            class="instagram-link"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                fill="#333"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Terms of Service Modal -->
+    <div id="termsModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Terms of Service</h2>
+          <span class="close" onclick="closeModal('termsModal')">&times;</span>
+        </div>
+        <div class="modal-body">
+          <p><strong>Effective Date:</strong> January 1, 2025</p>
+
+          <p>
+            Welcome to Versa ("we," "our," "us"). By signing up for our waitlist
+            and using our website, you agree to these Terms of Use.
+          </p>
+
+          <h3>1. Using Versa</h3>
+          <p>
+            Our website provides access to a waitlist for the Versa app (the
+            "Service").
+          </p>
+          <p>
+            You agree to use the Service only for its intended purpose and in
+            compliance with applicable laws.
+          </p>
+          <p>
+            Misuse of the Service, including attempts to disrupt or exploit the
+            platform, is strictly prohibited.
+          </p>
+
+          <h3>2. Intellectual Property</h3>
+          <p>
+            The Versa name, logo, design, website content, and the underlying
+            concept of the Versa platform are protected by copyright, trademark,
+            and other intellectual property laws.
+          </p>
+          <p>
+            You may not copy, reproduce, distribute, reverse engineer, or create
+            derivative works based on Versa without prior written consent.
+          </p>
+          <p>
+            Any attempt to replicate, redistribute, or launch a competing
+            service based on Versa's platform or branding is expressly
+            prohibited.
+          </p>
+          <p>
+            We reserve the right to enforce our intellectual property rights to
+            the fullest extent of the law.
+          </p>
+
+          <h3>3. Disclaimer of Warranties</h3>
+          <p>
+            Versa is currently in development. The waitlist and Service are
+            provided "as is" and "as available," without warranties of any kind.
+          </p>
+
+          <h3>4. Limitation of Liability</h3>
+          <p>
+            To the maximum extent permitted by law, Versa will not be liable for
+            any damages or losses arising out of your use of the Service.
+          </p>
+
+          <h3>5. Changes to the Terms</h3>
+          <p>
+            We may update these Terms at any time. If we make material changes,
+            we will post an updated version on this page.
+          </p>
+
+          <h3>6. Governing Law</h3>
+          <p>
+            These Terms are governed by the laws of the State of California.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Privacy Policy</h2>
+          <span class="close" onclick="closeModal('privacyModal')"
+            >&times;</span
+          >
+        </div>
+        <div class="modal-body">
+          <p><strong>Effective Date:</strong> January 1, 2025</p>
+
+          <p>
+            At Versa, your privacy matters. This Privacy Policy explains how we
+            collect and use your information when you join our waitlist.
+          </p>
+
+          <h3>1. Information We Collect</h3>
+          <p>When you sign up, we collect:</p>
+          <ul>
+            <li>Your first and last name</li>
+            <li>Your college</li>
+            <li>Your email address</li>
+          </ul>
+          <p>
+            We may also collect limited technical information (such as browser
+            type, device, or IP address) to help maintain and improve the
+            website.
+          </p>
+
+          <h3>2. How We Use Your Information</h3>
+          <p>We use your information to:</p>
+          <ul>
+            <li>Add you to the Versa waitlist</li>
+            <li>
+              Communicate updates, launch announcements, and relevant news
+            </li>
+            <li>
+              Understand our community of students to improve Versa's
+              development
+            </li>
+          </ul>
+
+          <h3>3. Sharing of Information</h3>
+          <p>We do not sell or rent your personal data.</p>
+          <p>
+            We may share your data with trusted third-party providers (such as
+            email or analytics services) strictly for operating Versa.
+          </p>
+          <p>
+            We may also disclose information if required by law or to protect
+            the rights and security of Versa.
+          </p>
+
+          <h3>4. Your Rights</h3>
+          <p>
+            You may request access, correction, or deletion of your information
+            at any time.
+          </p>
+          <p>
+            You may opt out of communications at any time using the unsubscribe
+            option in our emails.
+          </p>
+
+          <h3>5. Changes to This Policy</h3>
+          <p>
+            We may update this Privacy Policy from time to time. If we make
+            significant changes, we will post the updated version on this page.
+          </p>
+
+          <h3>6. Contact Information</h3>
+          <p>
+            If you have any questions about this Privacy Policy or our data
+            practices, please contact us at:
+          </p>
+          <p><strong>Email:</strong> helpversashop@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="waitlist-script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Versa - Coming Soon</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+      <div class="header-container">
+        <!-- Logo -->
+        <div class="logo-container">
+          <button
+            class="header-back-btn"
+            onclick="goBackToHome()"
+            style="display: none"
+            id="headerBackBtn"
+          >
+            ← Back to Home
+          </button>
+          <img
+            src="assets/VersaLogo.png"
+            alt="Versa Logo"
+            class="logo"
+            onclick="scrollToTop()"
+          />
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+          <button class="nav-btn how-it-works-btn" onclick="showHowItWorks()">
+            How does it work
+          </button>
+          <button
+            class="nav-btn join-waitlist-btn"
+            onclick="goToWaitlistPage()"
+          >
+            Join the waitlist
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section">
+        <img
+          src="assets/VersaWebsiteHeader.png"
+          alt="Versa - Student Marketplace"
+          class="hero-image"
+        />
+      </section>
+
+      <!-- What Even is Versa Section -->
+      <section class="what-is-versa-section">
+        <div class="container">
+          <h1 class="section-title">What Even is Versa?</h1>
+
+          <!-- Subsection 1: Versa at a glance -->
+          <div class="subsection">
+            <!-- Mobile image first -->
+            <div class="mobile-image-first">
+              <img
+                src="assets/WebsitePhoto5.jpeg"
+                alt="Versa Phrase"
+                class="subsection-image"
+              />
+            </div>
+
+            <div class="subsection-content">
+              <div class="text-left">
+                <img
+                  src="assets/WebsitePhoto5.jpeg"
+                  alt="Versa Phrase"
+                  class="subsection-image desktop-image"
+                />
+              </div>
+              <div class="text-right">
+                <h2 class="subsection-title">Versa at a glance</h2>
+                <p class="subsection-text">
+                  Versa is the United States'
+                  <strong>first student-exclusive marketplace</strong>, built to
+                  empower students to buy and sell secondhand goods within a
+                  trusted, university-verified community. By requiring a valid
+                  university email to join, Versa ensures authenticity and
+                  safety while connecting students directly to their peers.
+                  <strong
+                    >Students can only buy and sell to other students within
+                    their own university</strong
+                  >, creating a secure, localized marketplace where all
+                  transactions happen on campus. Our mission is to make student
+                  life more affordable and sustainable by giving students a
+                  convenient way to repurpose their items. Powered by a
+                  <strong>personalized recommendation algorithm</strong>, Versa
+                  also helps students discover the goods they actually need,
+                  fostering stronger, more sustainable campus communities.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subsection 2: Built with Students in mind -->
+          <div class="subsection">
+            <!-- Mobile image first -->
+            <div class="mobile-image-first">
+              <img
+                src="assets/WebsitePhoto3.jpeg"
+                alt="Versa Phrase"
+                class="subsection-image"
+              />
+            </div>
+
+            <div class="subsection-content">
+              <div class="text-left">
+                <h2 class="subsection-title">Built with Students in mind</h2>
+                <p class="subsection-text">
+                  Versa makes campus trading feel
+                  <strong>effortless</strong>—whether you're listing something
+                  in seconds or browsing deals between classes.
+                  <strong>Every post comes from a fellow student</strong>, so
+                  you know exactly who you're dealing with and what you're
+                  looking at. It's simple, quick, and built to make finding and
+                  exchanging items on campus more
+                  <strong>natural and accessible</strong>.
+                </p>
+              </div>
+              <div class="text-right">
+                <img
+                  src="assets/WebsitePhoto3.jpeg"
+                  alt="Versa Phrase"
+                  class="subsection-image desktop-image"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Subsection 3: The Motivation -->
+          <div class="subsection">
+            <div class="subsection-content">
+              <div class="text-left">
+                <img
+                  src="assets/WebsitePhoto4.jpeg"
+                  alt="Versa Phrase"
+                  class="subsection-image"
+                />
+              </div>
+              <div class="text-right">
+                <h2 class="subsection-title">The Motivation</h2>
+                <p class="subsection-text">
+                  Versa was created by a student who saw how often classmates
+                  were using
+                  <strong
+                    >Instagram and Snapchat just to sell their stuff</strong
+                  >, without a real platform built for it. The idea came from
+                  realizing there was no
+                  <strong>localized, student-focused space</strong> to make
+                  these exchanges simple and safe. Facebook Marketplace often
+                  felt frustrating—items were either
+                  <strong>too far away or came with sketchy experiences</strong>
+                  that didn't feel secure. Versa was built to solve that: a
+                  <strong>trusted, campus-only marketplace</strong> where
+                  students can buy and sell within walking distance, with
+                  <strong>safety and convenience at the core</strong>.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- How It Works Screen (hidden by default) -->
+    <div
+      id="howItWorksScreen"
+      class="how-it-works-screen"
+      style="display: none"
+    >
+      <!-- Banner Image -->
+      <div class="how-it-works-banner">
+        <img
+          src="assets/WebsitePhoto2.jpeg"
+          alt="Versa Logo Banner"
+          class="banner-image"
+        />
+      </div>
+
+      <div class="container">
+        <!-- Tab Navigation -->
+        <div class="tab-navigation">
+          <button
+            class="tab-btn active"
+            data-tab="how-it-works"
+            onclick="switchTab('how-it-works')"
+          >
+            How Does Versa Work
+          </button>
+          <button
+            class="tab-btn"
+            data-tab="general-faq"
+            onclick="switchTab('general-faq')"
+          >
+            General FAQ
+          </button>
+        </div>
+
+        <!-- How It Works Content -->
+        <div id="how-it-works-content" class="tab-content">
+          <!-- Step 1: List your item -->
+          <div id="step-1" class="step-section">
+            <div class="step-images">
+              <img
+                src="assets/AssetOne.png"
+                alt="Asset One"
+                class="step-image"
+              />
+              <img
+                src="assets/AssetTwo.png"
+                alt="Asset Two"
+                class="step-image"
+              />
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">List your item</h3>
+              <p class="step-text">
+                Easily create a listing for any item you want to sell with just
+                a few quick taps. Add photos, a description, and a price—it's
+                simple and fast. Once posted, your listing becomes instantly
+                visible to all students on your campus, ensuring maximum reach
+                within your university community. Our recommendation algorithm
+                highlights your item to students who are most likely to be
+                interested, helping you connect faster with the right buyer. And
+                beyond a single sale, students can follow you to stay up to date
+                with everything you're selling, making it easier to build a
+                loyal group of buyers who will be notified when you post
+                something new.
+              </p>
+            </div>
+            <div
+              class="arrow-down clickable-arrow"
+              onclick="scrollToNextStep(2)"
+            >
+              ↓
+            </div>
+          </div>
+
+          <!-- Step 2: Authorize Payment & Get Your Code -->
+          <div id="step-2" class="step-section">
+            <div class="step-images">
+              <img
+                src="assets/AssetThree.PNG"
+                alt="Asset Three"
+                class="step-image"
+              />
+              <img
+                src="assets/AssetFour.PNG"
+                alt="Asset Four"
+                class="step-image"
+              />
+              <img
+                src="assets/AssetFive.png"
+                alt="Asset Five"
+                class="step-image"
+              />
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">Authorize Payment & Get Your Code</h3>
+              <p class="step-text">
+                When a buyer commits to purchase, they authorize their payment
+                through Stripe. A unique verification code is then emailed
+                directly to the buyer, ready to be used at the exchange.
+              </p>
+            </div>
+            <div
+              class="arrow-down clickable-arrow"
+              onclick="scrollToNextStep(3)"
+            >
+              ↓
+            </div>
+          </div>
+
+          <!-- Step 3: Meet in Person -->
+          <div id="step-3" class="step-section">
+            <div class="step-images">
+              <img
+                src="assets/AssetSix.png"
+                alt="Asset Six"
+                class="step-image"
+              />
+              <img
+                src="assets/AssetSeven.png"
+                alt="Asset Seven"
+                class="step-image"
+              />
+              <img
+                src="assets/AssetEight.PNG"
+                alt="Asset Eight"
+                class="step-image"
+              />
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">Step 3: Meet in Person</h3>
+              <p class="step-text">
+                The seller gets notified as soon as their item is sold and
+                connects with the buyer to arrange a meetup on campus. At the
+                exchange, the buyer enters their emailed verification code on
+                the seller's phone to securely finalize the deal.
+              </p>
+            </div>
+            <div
+              class="arrow-down clickable-arrow"
+              onclick="scrollToNextStep(4)"
+            >
+              ↓
+            </div>
+          </div>
+
+          <!-- Step 4: Receive Receipts -->
+          <div id="step-4" class="step-section">
+            <div class="step-images">
+              <img
+                src="assets/AssetNine.png"
+                alt="Asset Nine"
+                class="step-image"
+              />
+              <img
+                src="assets/AssetTen.png"
+                alt="Asset Ten"
+                class="step-image"
+              />
+            </div>
+            <div class="step-content">
+              <h3 class="step-title">Step 4: Receive Receipts</h3>
+              <p class="step-text">
+                After the exchange is confirmed, both buyer and seller are
+                emailed detailed receipts. This ensures every transaction is
+                transparent, documented, and easy to reference later.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- General FAQ Content -->
+        <div id="general-faq-content" class="tab-content" style="display: none">
+          <div class="faq-container">
+            <!-- General Setup Section -->
+            <div class="faq-section">
+              <h3 class="faq-section-title">General Setup</h3>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span>Who can sign up?</span>
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Once the app is live, Versa will debut exclusively for
+                    University of Maryland students and staff. That means anyone
+                    with an email ending in
+                    <strong>@terpmail.umd.edu</strong> or
+                    <strong>@umd.edu</strong> can register. Very soon after
+                    launch, we plan to expand to other universities across the
+                    country, giving more students access to the platform. Even
+                    if you're not a UMD student, we encourage you to still join
+                    the waitlist with an email ending in
+                    <strong>.edu</strong> as you will be notified when we launch
+                    at your university.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span>Is Versa free?</span>
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Yes, Versa is free to use for all University students and
+                    staff.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span>When will I be able to use Versa?</span>
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Versa is set to be launched between late October - mid
+                    November 2025, stay tuned :)
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span>Can I use Versa if I am not an enrolled student?</span>
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    No, unfortunately Versa is just for university students.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Buyers Section -->
+            <div class="faq-section">
+              <h3 class="faq-section-title">Buyers</h3>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span>How do I receive items I purchased?</span>
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    All transactions on Versa happen
+                    <strong>in person through campus meetups</strong>. Once you
+                    meet the seller, you'll be able to see the product before
+                    finalizing the transaction.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span>Can I refund items?</span>
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Refunds are not available once a purchase is finalized.
+                    Buyers should carefully
+                    <strong
+                      >verify the item in person before entering their
+                      verification code</strong
+                    >
+                    to confirm the exchange.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span>What if the item is not as expected?</span>
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    You should only enter your verification code after
+                    confirming the item matches the description and is in the
+                    condition you expect. After the code is entered and the
+                    transaction is processed, we can no longer guarantee
+                    refunds.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span>How do exchanges work?</span>
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    The buyer and seller should coordinate a time via
+                    <strong>Versa's in-app messaging</strong> and arrange a time
+                    and place for the exchange. We recommend that you choose
+                    <strong
+                      >a location on campus and a time during daylight
+                      hours</strong
+                    >. From here the buyer simply enters their
+                    <strong
+                      >purchase authorization code into the seller's
+                      phone</strong
+                    >
+                    given they are satisfied with the item and voilà the
+                    exchange is complete.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span
+                    >What if the seller is not at the agreed pickup
+                    location?</span
+                  >
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Try messaging or calling the seller through the app, they
+                    may be running late. If the seller is unresponsive, you as
+                    the buyer have the ability to
+                    <strong
+                      >cancel the purchase for up to 48 hours after your payment
+                      is authorized and before the sale has been
+                      completed</strong
+                    >.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Selling Section -->
+            <div class="faq-section">
+              <h3 class="faq-section-title">Sellers</h3>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span>Is it free to sell on Versa?</span>
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    It's free to create and list items on Versa. However, an
+                    <strong>8% commission fee applies to every sale</strong>.
+                    This is the minimum needed to keep the platform secure,
+                    cover Stripe transaction fees, and ensure the app remains
+                    free to download.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span>How do I list an item?</span>
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Listing is quick and simple. Just add a title, description,
+                    price, and photo of your item—all for free. Your listing
+                    will instantly be available to other students on your
+                    campus.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span>What if the buyer does not pay?</span>
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Payments are securely held in <strong>Stripe</strong> until
+                    the transaction is confirmed. As long as the buyer enters
+                    their emailed verification code on your phone before you
+                    hand over the item, you're fully protected. If the code
+                    isn't entered, the sale isn't completed, and you keep your
+                    item.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span>How do price negotiations work?</span>
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Versa's in-app messaging system has a feature called
+                    <strong>price proposals</strong>. Did you and a buyer agree
+                    on a new price? Perfect! Simply send a
+                    <strong>new price proposal to the buyer</strong> for the
+                    item in question. This allows the buyer the opportunity to
+                    purchase the listing at a new agreed upon price while
+                    keeping the listing the same price for all other users on
+                    the platform in case the sale falls through.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span
+                    >What if multiple people try to buy my item
+                    simultaneously?</span
+                  >
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Versa will award the purchase to whichever buyer
+                    <strong>authorizes their payment first</strong>, from here
+                    your item will be marked as
+                    <strong>pending sale</strong> and other users will only be
+                    able to view your item but not purchase it anymore. If the
+                    sale falls through, you as a seller can
+                    <strong>cancel the sale</strong> and your item will
+                    instantly go back to being listed as active, once your sale
+                    is fully complete then your listing will be
+                    <strong>taken off the marketplace</strong>.
+                  </p>
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question" onclick="toggleFaqItem(this)">
+                  <span>Can I edit my listing?</span>
+                  <span class="faq-arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                  <p>
+                    Yes, at any time before a sale is pending you can edit any
+                    aspect of your listing including
+                    <strong
+                      >price, condition, title, category and even the
+                      photos</strong
+                    >. Simply navigate to the listing in your profile and
+                    <strong>edit it from there</strong>.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Waitlist Modal (hidden by default) -->
+    <div id="waitlistModal" class="modal-overlay" onclick="closeModal(event)">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Join the Waitlist</h2>
+          <button class="close-btn" onclick="closeWaitlistModal()">
+            &times;
+          </button>
+        </div>
+        <form id="waitlistForm" class="waitlist-form">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" required />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required />
+          </div>
+          <button type="submit" class="submit-btn">Join Waitlist</button>
+        </form>
+        <div id="successMessage" class="success-message" style="display: none">
+          <h3>🎉 Welcome to the waitlist!</h3>
+          <p>We'll notify you as soon as Versa is ready to launch!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- How It Works Modal -->
+    <div id="howItWorksModal" class="modal-overlay" onclick="closeModal(event)">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>How Versa Works</h2>
+          <button class="close-btn" onclick="closeHowItWorksModal()">
+            &times;
+          </button>
+        </div>
+        <div class="how-it-works-content">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>List Your Items</h3>
+              <p>
+                Easily list textbooks, furniture, electronics, and more on our
+                student marketplace.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Connect with Students</h3>
+              <p>
+                Browse items from students at your campus and connect directly
+                with sellers.
+              </p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Secure Transactions</h3>
+              <p>
+                Safe, secure payments with verification codes to ensure smooth
+                transactions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img
+            src="assets/VersaLogo.png"
+            alt="Versa Logo"
+            class="footer-logo-img"
+          />
+        </div>
+        <div class="footer-text">
+          <p>&copy; Versa 2025 All rights reserved</p>
+          <div class="footer-links">
+            <a href="#" onclick="openModal('termsModal')" class="footer-link"
+              >Terms of Service</a
+            >
+            <span class="footer-separator">|</span>
+            <a href="#" onclick="openModal('privacyModal')" class="footer-link"
+              >Privacy Policy</a
+            >
+          </div>
+        </div>
+        <div class="footer-social">
+          <a
+            href="https://www.instagram.com/shopversa.us/"
+            target="_blank"
+            class="instagram-link"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                fill="#333"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Terms of Service Modal -->
+    <div id="termsModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Terms of Service</h2>
+          <span class="close" onclick="closeModal('termsModal')">&times;</span>
+        </div>
+        <div class="modal-body">
+          <p><strong>Effective Date:</strong> September 10, 2025</p>
+
+          <p>
+            Welcome to Versa ("we," "our," "us"). By signing up for our waitlist
+            and using our website, you agree to these Terms of Use.
+          </p>
+
+          <h3>1. Using Versa</h3>
+          <p>
+            Our website provides access to a waitlist for the Versa app (the
+            "Service").
+          </p>
+          <p>
+            You agree to use the Service only for its intended purpose and in
+            compliance with applicable laws.
+          </p>
+          <p>
+            Misuse of the Service, including attempts to disrupt or exploit the
+            platform, is strictly prohibited.
+          </p>
+
+          <h3>2. Intellectual Property</h3>
+          <p>
+            The Versa name, logo, design, website content, and the underlying
+            concept of the Versa platform are protected by copyright, trademark,
+            and other intellectual property laws.
+          </p>
+          <p>
+            You may not copy, reproduce, distribute, reverse engineer, or create
+            derivative works based on Versa without prior written consent.
+          </p>
+          <p>
+            Any attempt to replicate, redistribute, or launch a competing
+            service based on Versa's platform or branding is expressly
+            prohibited.
+          </p>
+          <p>
+            We reserve the right to enforce our intellectual property rights to
+            the fullest extent of the law.
+          </p>
+
+          <h3>3. Disclaimer of Warranties</h3>
+          <p>
+            Versa is currently in development. The waitlist and Service are
+            provided "as is" and "as available," without warranties of any kind.
+          </p>
+
+          <h3>4. Limitation of Liability</h3>
+          <p>
+            To the maximum extent permitted by law, Versa will not be liable for
+            any damages or losses arising out of your use of the Service.
+          </p>
+
+          <h3>5. Changes to the Terms</h3>
+          <p>
+            We may update these Terms at any time. If we make material changes,
+            we will post an updated version on this page.
+          </p>
+
+          <h3>6. Governing Law</h3>
+          <p>These Terms are governed by the laws of the State of Maryland.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Privacy Policy</h2>
+          <span class="close" onclick="closeModal('privacyModal')"
+            >&times;</span
+          >
+        </div>
+        <div class="modal-body">
+          <p><strong>Effective Date:</strong> September 10, 2025</p>
+
+          <p>
+            At Versa, your privacy matters. This Privacy Policy explains how we
+            collect and use your information when you join our waitlist.
+          </p>
+
+          <h3>1. Information We Collect</h3>
+          <p>When you sign up, we collect:</p>
+          <ul>
+            <li>Your first and last name</li>
+            <li>Your college</li>
+            <li>Your email address</li>
+          </ul>
+          <p>
+            We may also collect limited technical information (such as browser
+            type, device, or IP address) to help maintain and improve the
+            website.
+          </p>
+
+          <h3>2. How We Use Your Information</h3>
+          <p>We use your information to:</p>
+          <ul>
+            <li>Add you to the Versa waitlist</li>
+            <li>
+              Communicate updates, launch announcements, and relevant news
+            </li>
+            <li>
+              Understand our community of students to improve Versa's
+              development
+            </li>
+          </ul>
+
+          <h3>3. Sharing of Information</h3>
+          <p>We do not sell or rent your personal data.</p>
+          <p>
+            We may share your data with trusted third-party providers (such as
+            email or analytics services) strictly for operating Versa.
+          </p>
+          <p>
+            We may also disclose information if required by law or to protect
+            the rights and security of Versa.
+          </p>
+
+          <h3>4. Your Rights</h3>
+          <p>
+            You may request access, correction, or deletion of your information
+            at any time.
+          </p>
+          <p>
+            You may opt out of communications at any time using the unsubscribe
+            option in our emails.
+          </p>
+
+          <h3>5. Changes to This Policy</h3>
+          <p>
+            We may update this Privacy Policy from time to time. If we make
+            significant changes, we will post the updated version on this page.
+          </p>
+
+          <h3>6. Contact Information</h3>
+          <p>
+            If you have any questions about this Privacy Policy or our data
+            practices, please contact us at:
+          </p>
+          <p><strong>Email:</strong> helpversashop@gmail.com</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
