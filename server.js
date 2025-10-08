@@ -7,7 +7,16 @@ const PORT = process.env.PORT || 8080;
 // Serve static files from the current directory
 app.use(express.static("."));
 
-// Serve index.html for all routes (for single page app routing)
+// Serve PDF files explicitly
+app.get("/TOSVersa.pdf", (req, res) => {
+  res.sendFile(path.join(__dirname, "TOSVersa.pdf"));
+});
+
+app.get("/PrivacyPolicyVersa.pdf", (req, res) => {
+  res.sendFile(path.join(__dirname, "PrivacyPolicyVersa.pdf"));
+});
+
+// Serve index.html for all other routes (for single page app routing)
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
