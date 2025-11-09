@@ -985,6 +985,31 @@ body {
   margin-top: 8px;
 }
 
+.footer-support {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transform: translateX(-10px);
+}
+
+.footer-support-label {
+  font-size: 14px;
+  color: #cbd5f5;
+}
+
+.footer-support-link {
+  font-size: 14px;
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-support-link:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
 .footer-link {
   color: #e2e8f0;
   text-decoration: none;
@@ -1402,6 +1427,11 @@ body {
     transform: translateX(65px);
   }
 
+  .footer-support {
+    transform: translateX(65px);
+    align-items: center;
+  }
+
   .footer-logo-img {
     height: 150px;
   }
@@ -1414,6 +1444,11 @@ body {
     flex-direction: column;
     gap: 5px;
     margin-top: 10px;
+  }
+
+  .footer-support {
+    transform: translateX(0);
+    align-items: center;
   }
 
   .footer-separator {
