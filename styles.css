@@ -1411,6 +1411,7 @@ body {
     gap: 20px;
     padding: 0 20px;
     text-align: center;
+    align-items: center; /* ensure children are centered horizontally */
   }
 
   .footer-text {
@@ -1434,6 +1435,12 @@ body {
 
   .footer-support {
     align-items: center;
+  }
+
+  /* Center social icons container on mobile */
+  .footer-social {
+    justify-content: center;
+    width: 100%;
   }
 
   .footer-separator {
