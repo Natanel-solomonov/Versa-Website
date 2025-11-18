@@ -1417,6 +1417,12 @@ body {
   .footer-text {
     position: static;
     text-align: center;
+    transform: none;
+    left: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   .footer-logo-img {
@@ -1425,22 +1431,33 @@ body {
 
   .footer-text p {
     font-size: 14px;
+    text-align: center;
   }
 
   .footer-links {
     flex-direction: column;
     gap: 5px;
     margin-top: 10px;
+    align-items: center;
+    width: 100%;
   }
 
   .footer-support {
     align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+
+  .footer-support-label,
+  .footer-support-link {
+    text-align: center;
   }
 
   /* Center social icons container on mobile */
   .footer-social {
     justify-content: center;
     width: 100%;
+    display: flex;
   }
 
   .footer-separator {
